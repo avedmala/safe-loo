@@ -36,7 +36,6 @@ public class MainActivity extends AppCompatActivity implements LocationListener{
     double lng;
     String ada = "false";
     String unisex = "false";
-    JSONObject jsonObject;
     String s;
 
     CheckBox isDisabled;
@@ -156,17 +155,18 @@ public class MainActivity extends AppCompatActivity implements LocationListener{
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            Log.d("tag", s);
+            intent.putExtra("EXTRA", s);
+            startActivity(intent);
             return s;
         }
-        @Override
-        protected void onPostExecute(String s) {
-            super.onPostExecute(s);
-            try {
-                jsonObject = new JSONObject(s);
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-        }
+//        @Override
+//        protected void onPostExecute(String s) {
+//            super.onPostExecute(s);
+//            try {
+//                jsonObject = new JSONObject(s);
+//            } catch (JSONException e) {
+//                e.printStackTrace();
+//            }
+//        }
     }
 }

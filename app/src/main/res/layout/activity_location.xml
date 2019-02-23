@@ -4,6 +4,97 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LocationActivity">
+    android:background="#3c3c3c"
+    android:fitsSystemWindows="true"
+    tools:context=".Main2Activity">
 
+    <TextView
+        android:id="@+id/id_locName"
+        android:layout_width="167dp"
+        android:layout_height="55dp"
+        android:layout_marginBottom="53dp"
+        android:layout_marginTop="56dp"
+        android:text="Name:"
+        android:textAlignment="center"
+        android:textColor="@android:color/background_light"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/id_addy"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/id_addy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="102dp"
+        android:text="Address:"
+        android:textAlignment="center"
+        android:textColor="@android:color/background_light"
+        app:layout_constraintBottom_toTopOf="@+id/id_unisex"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/id_unisex"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="74dp"
+        android:layout_marginTop="285dp"
+        android:text="Unisex:"
+        android:textColor="@android:color/background_light"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/id_accessible"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="29dp"
+        android:text="Accessible"
+        android:textColor="@android:color/background_light"
+        app:layout_constraintStart_toStartOf="@+id/id_unisex"
+        app:layout_constraintTop_toBottomOf="@+id/id_unisex" />
+
+    <TextView
+        android:id="@+id/id_distance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="44dp"
+        android:layout_marginStart="24dp"
+        android:text="Distance from Current Location:"
+        android:textColor="@android:color/background_light"
+        app:layout_constraintBottom_toTopOf="@+id/id_imageViewLeft"
+        app:layout_constraintStart_toStartOf="@+id/id_imageViewLeft" />
+
+    <TextView
+        android:id="@+id/id_pageNum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="56dp"
+        android:text="Page"
+        android:textColor="@android:color/background_light"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/id_imageViewRight"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="48dp"
+        android:layout_marginBottom="99dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/rightarrow" />
+
+    <ImageView
+        android:id="@+id/id_imageViewLeft"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="48dp"
+        app:layout_constraintBottom_toBottomOf="@+id/id_imageViewRight"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/id_imageViewRight"
+        app:srcCompat="@drawable/leftarrow" />
 </android.support.constraint.ConstraintLayout>
