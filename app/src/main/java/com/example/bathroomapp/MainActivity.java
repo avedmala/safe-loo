@@ -17,6 +17,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
+import android.widget.EditText;
+import android.widget.RadioButton;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -40,6 +42,9 @@ public class MainActivity extends AppCompatActivity implements LocationListener{
     CheckBox isDisabled;
     CheckBox isNeutral;
     Button findBathroom;
+    EditText editText;
+    RadioButton currentLoc;
+    RadioButton manualLoc;
 
     Intent intent;
 
@@ -51,8 +56,32 @@ public class MainActivity extends AppCompatActivity implements LocationListener{
         isDisabled = findViewById(R.id.id_isDisabled);
         isNeutral = findViewById(R.id.id_isNeutral);
         findBathroom = findViewById(R.id.id_findBathrooms);
+        editText = findViewById(R.id.id_editText);
+        currentLoc=findViewById(R.id.id_currentLoc);
+        manualLoc=findViewById(R.id.id_enterLoc);
+
+        editText.setVisibility(View.INVISIBLE);
+
+        currentLoc.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked){
+                    editText.setVisibility(View.INVISIBLE);
+                }
+            }
+        });
+
+        manualLoc.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked)
+                    editText.setVisibility(View.VISIBLE);
+            }
+        });
 
         intent = new Intent(this, LocationActivity.class);
+
+
 
         isDisabled.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override

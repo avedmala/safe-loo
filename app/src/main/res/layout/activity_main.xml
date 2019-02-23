@@ -4,6 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#3c3c3c"
+    android:fitsSystemWindows="true"
     tools:context=".MainActivity">
 
     <CheckBox
@@ -15,11 +17,14 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="Disabled"
+        android:textColor="@android:color/background_light"
+        android:textColorLink="#00594e"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.246"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.265" />
+        app:layout_constraintVertical_bias="0.372" />
 
     <CheckBox
         android:id="@+id/id_isNeutral"
@@ -30,11 +35,14 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="Gender Neutral"
+        android:textColor="@android:color/background_light"
+        android:textColorLink="#00594e"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/id_isDisabled"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/id_isDisabled"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.373" />
 
     <RadioGroup
         android:id="@+id/id_radioGroup"
@@ -56,42 +64,51 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Use Current Location" />
+            android:text="Use Current Location"
+            android:textColor="@android:color/background_light"
+            android:textColorLink="#00594e" />
 
         <RadioButton
             android:id="@+id/id_enterLoc"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Enter Address" />
+            android:text="Enter Address"
+            android:textColor="@android:color/background_light"
+            android:textColorLink="#00594e" />
     </RadioGroup>
 
     <Button
         android:id="@+id/id_findBathrooms"
-        android:layout_width="wrap_content"
+        android:layout_width="129dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:background="#00594e"
         android:text="Find Bathrooms"
+        android:textColor="@android:color/background_light"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.912" />
+        app:layout_constraintVertical_bias="0.85" />
 
     <EditText
         android:id="@+id/id_editText"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_height="42dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
         android:ems="10"
+        android:gravity="center_vertical"
         android:inputType="textPersonName"
+        android:textColor="@android:color/background_light"
+        android:textColorLink="#00594e"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.503"
@@ -101,15 +118,17 @@
 
     <TextView
         android:id="@+id/textView3"
-        android:layout_width="206dp"
-        android:layout_height="54dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_width="281dp"
+        android:layout_height="128dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:fontFamily="@font/actor"
         android:gravity="center"
-        android:text="Baathrum"
-        android:textSize="24sp"
+        android:text="Find My Bathroom"
+        android:textColor="#007263"
+        android:textSize="40sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
