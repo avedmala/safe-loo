@@ -35,6 +35,8 @@ public class LocationActivity extends AppCompatActivity {
     Double lng;
     Double dist;
 
+    String units;
+
     TextView name;
     TextView street;
     TextView city;
@@ -71,6 +73,7 @@ public class LocationActivity extends AppCompatActivity {
 
         lat = getIntent().getDoubleExtra("lat", 0.0);
         lng = getIntent().getDoubleExtra("lng", 0.0);
+        units = getIntent().getStringExtra("unit");
 
         new getLatLng().execute("https://maps.googleapis.com/maps/api/geocode/json?latlng="+lat+","+lng+"&key=AIzaSyCld3yqglDpsfkE3ezJVSPbqj9YSuNZJGE");
 
@@ -87,7 +90,7 @@ public class LocationActivity extends AppCompatActivity {
             street.setText(json.getJSONObject(pageNum).getString("street"));
             city.setText(json.getJSONObject(pageNum).getString("city")+", "+json.getJSONObject(pageNum).getString("state"));
             dist = json.getJSONObject(pageNum).getDouble("distance");
-            distance.setText(String.format("%.2f", dist)+" miles");
+            distance.setText(String.format("%.2f", dist) + " "+units);
             if(json.getJSONObject(pageNum).getString("unisex").equals("true"))
                 unisex.setVisibility(View.VISIBLE);
             else
@@ -124,52 +127,53 @@ public class LocationActivity extends AppCompatActivity {
         forward.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                pageNum++;
-                page.setText(pageNum+1+"");
+                try {
+                    if(pageNum+1 == json.length())
+                        forward.setVisibility(View.INVISIBLE);
+                    else {
+                        pageNum++;
+                        page.setText(pageNum + 1 + "");
+                        name.setText(json.getJSONObject(pageNum).getString("name"));
+                        street.setText(json.getJSONObject(pageNum).getString("street"));
+                        city.setText(json.getJSONObject(pageNum).getString("city") + ", " + json.getJSONObject(pageNum).getString("state"));
+                        dist = json.getJSONObject(pageNum).getDouble("distance");
+                        distance.setText(String.format("%.2f", dist) + " "+units);
+                        if (json.getJSONObject(pageNum).getString("unisex").equals("true"))
+                            unisex.setVisibility(View.VISIBLE);
+                        else
+                            unisex.setVisibility(View.INVISIBLE);
+                        if (json.getJSONObject(pageNum).getString("accessible").equals("true"))
+                            accessible.setVisibility(View.VISIBLE);
+                        else
+                            accessible.setVisibility(View.INVISIBLE);
+
+                        if (json.getJSONObject(pageNum).getString("directions").equals("")) {
+                            directions.setText("No Directions Available");
+                            directions.setTextSize(18);
+                        } else {
+                            directions.setText(json.getJSONObject(pageNum).getString("directions"));
+                            directions.setTextSize(12);
+                        }
+
+                        if (json.getJSONObject(pageNum).getString("comments").equals("")) {
+                            comments.setText("No Comments Available");
+                            comments.setTextSize(18);
+                        } else {
+                            comments.setText(json.getJSONObject(pageNum).getString("comments"));
+                            comments.setTextSize(12);
+                        }
+
+                        streetD = json.getJSONObject(pageNum).getString("street").replace(" ", "+");
+                        cityD = json.getJSONObject(pageNum).getString("city").replace(" ", "+");
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
 
                 if(pageNum == 0)
                     back.setVisibility(View.INVISIBLE);
                 else
                     back.setVisibility(View.VISIBLE);
-
-                try {
-                    name.setText(json.getJSONObject(pageNum).getString("name"));
-                    street.setText(json.getJSONObject(pageNum).getString("street"));
-                    city.setText(json.getJSONObject(pageNum).getString("city")+", "+json.getJSONObject(pageNum).getString("state"));
-                    dist = json.getJSONObject(pageNum).getDouble("distance");
-                    distance.setText(String.format("%.2f", dist)+" miles");
-                    if(json.getJSONObject(pageNum).getString("unisex").equals("true"))
-                        unisex.setVisibility(View.VISIBLE);
-                    else
-                        unisex.setVisibility(View.INVISIBLE);
-                    if(json.getJSONObject(pageNum).getString("accessible").equals("true"))
-                        accessible.setVisibility(View.VISIBLE);
-                    else
-                        accessible.setVisibility(View.INVISIBLE);
-
-                    if(json.getJSONObject(pageNum).getString("directions").equals("")) {
-                        directions.setText("No Directions Available");
-                        directions.setTextSize(18);
-                    }
-                    else {
-                        directions.setText(json.getJSONObject(pageNum).getString("directions"));
-                        directions.setTextSize(12);
-                    }
-
-                    if(json.getJSONObject(pageNum).getString("comments").equals("")) {
-                        comments.setText("No Comments Available");
-                        comments.setTextSize(18);
-                    }
-                    else {
-                        comments.setText(json.getJSONObject(pageNum).getString("comments"));
-                        comments.setTextSize(12);
-                    }
-
-                    streetD = json.getJSONObject(pageNum).getString("street").replace(" ", "+");
-                    cityD = json.getJSONObject(pageNum).getString("city").replace(" ", "+");
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
 
                 //new getDistance().execute("https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins="+origin+"&destinations="+streetD+"+"+cityD+"&key=AIzaSyCld3yqglDpsfkE3ezJVSPbqj9YSuNZJGE");
                 //distance.setText(matrixDistance);
@@ -181,6 +185,7 @@ public class LocationActivity extends AppCompatActivity {
             public void onClick(View v) {
                 pageNum--;
                 page.setText(pageNum+1+"");
+                forward.setVisibility(View.VISIBLE);
 
                 if(pageNum == 0)
                     back.setVisibility(View.INVISIBLE);
@@ -192,7 +197,7 @@ public class LocationActivity extends AppCompatActivity {
                     street.setText(json.getJSONObject(pageNum).getString("street"));
                     city.setText(json.getJSONObject(pageNum).getString("city")+", "+json.getJSONObject(pageNum).getString("state"));
                     dist = json.getJSONObject(pageNum).getDouble("distance");
-                    distance.setText(String.format("%.2f", dist)+" miles");
+                    distance.setText(String.format("%.2f", dist) + " "+units);
                     if(json.getJSONObject(pageNum).getString("unisex").equals("true"))
                         unisex.setVisibility(View.VISIBLE);
                     else
@@ -284,7 +289,7 @@ public class LocationActivity extends AppCompatActivity {
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-            new getDistance().execute("https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins="+origin+"&destinations="+streetD+"+"+cityD+"&key=AIzaSyCld3yqglDpsfkE3ezJVSPbqj9YSuNZJGE");
+            //new getDistance().execute("https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins="+origin+"&destinations="+streetD+"+"+cityD+"&key=AIzaSyCld3yqglDpsfkE3ezJVSPbqj9YSuNZJGE");
             return b;
         }
     }
