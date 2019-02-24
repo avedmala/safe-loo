@@ -1,138 +1,183 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
     xmlns:app="http://schemas.android.com/apk/res-auto"
+
     xmlns:tools="http://schemas.android.com/tools"
+
     android:layout_width="match_parent"
+
     android:layout_height="match_parent"
-    android:background="#3c3c3c"
+
+    android:background="@drawable/drawable_purple_gradient"
+
     android:fitsSystemWindows="true"
+
     tools:context=".MainActivity">
 
-    <CheckBox
-        android:id="@+id/id_isDisabled"
-        android:layout_width="116dp"
-        android:layout_height="39dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:text="Disabled"
-        android:textColor="@android:color/background_light"
-        android:textColorLink="#00594e"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.246"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.372" />
-
-    <CheckBox
-        android:id="@+id/id_isNeutral"
-        android:layout_width="152dp"
-        android:layout_height="41dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:text="Gender Neutral"
-        android:textColor="@android:color/background_light"
-        android:textColorLink="#00594e"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/id_isDisabled"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.373" />
-
-    <RadioGroup
-        android:id="@+id/id_radioGroup"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.554">
-
-        <RadioButton
-            android:id="@+id/id_currentLoc"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Use Current Location"
-            android:textColor="@android:color/background_light"
-            android:textColorLink="#00594e" />
-
-        <RadioButton
-            android:id="@+id/id_enterLoc"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Enter Address"
-            android:textColor="@android:color/background_light"
-            android:textColorLink="#00594e" />
-    </RadioGroup>
-
-    <Button
-        android:id="@+id/id_findBathrooms"
-        android:layout_width="129dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:background="#00594e"
-        android:text="Find Bathrooms"
-        android:textColor="@android:color/background_light"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.85" />
-
-    <EditText
-        android:id="@+id/id_editText"
-        android:layout_width="wrap_content"
-        android:layout_height="42dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:ems="10"
-        android:gravity="center_vertical"
-        android:inputType="textPersonName"
-        android:textColor="@android:color/background_light"
-        android:textColorLink="#00594e"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/id_radioGroup"
-        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
-        android:id="@+id/textView3"
-        android:layout_width="281dp"
-        android:layout_height="128dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:fontFamily="@font/actor"
+
+        android:id="@+id/title"
+
+        android:layout_width="0dp"
+
+        android:layout_height="74dp"
+
+        android:layout_marginBottom="75dp"
+
+        android:fontFamily="@font/ubuntu_light"
+
         android:gravity="center"
-        android:text="Find My Bathroom"
-        android:textColor="#007263"
-        android:textSize="40sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+
+        android:text="Safe Loo"
+
+        android:textColor="@android:color/background_light"
+
+        android:textSize="38sp"
+
+        app:layout_constraintBottom_toTopOf="@+id/id_radioGroup"
+
         app:layout_constraintEnd_toEndOf="parent"
+
         app:layout_constraintStart_toStartOf="parent"
+
+        app:layout_constraintTop_toBottomOf="@+id/id_settings" />
+
+
+    <ImageView
+
+        android:id="@+id/id_settings"
+
+        android:layout_width="37dp"
+
+        android:layout_height="35dp"
+
+        android:layout_marginTop="42dp"
+
+        android:layout_marginEnd="35dp"
+
+        android:layout_marginBottom="37dp"
+
+        android:alpha="0.5"
+
+        app:layout_constraintBottom_toTopOf="@+id/title"
+
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.068" />
+        app:srcCompat="@drawable/settings" />
+
+
+
+    <Button
+
+        android:id="@+id/id_findBathrooms"
+
+        android:layout_width="224dp"
+
+        android:layout_height="wrap_content"
+
+        android:layout_marginBottom="186dp"
+
+        android:background="@drawable/mybutton"
+
+        android:fontFamily="@font/ubuntu_light"
+
+        android:text="Find Bathrooms Near Me"
+
+        android:textColor="@android:color/background_light"
+
+        android:textStyle="bold"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintStart_toStartOf="parent"
+
+        app:layout_constraintTop_toBottomOf="@+id/id_editText" />
+
+
+
+    <RadioGroup
+
+        android:id="@+id/id_radioGroup"
+
+        android:layout_width="wrap_content"
+
+        android:layout_height="wrap_content"
+
+        android:layout_marginBottom="9dp"
+
+        android:layout_marginStart="24dp"
+
+        android:orientation="vertical"
+
+        app:layout_constraintBottom_toTopOf="@+id/id_editText"
+
+        app:layout_constraintStart_toStartOf="@+id/id_editText"
+
+        app:layout_constraintTop_toBottomOf="@+id/title">
+
+
+        <RadioButton
+
+            android:id="@+id/id_currentLoc"
+
+            android:layout_width="wrap_content"
+
+            android:layout_height="wrap_content"
+
+            android:layout_weight="1"
+
+            android:fontFamily="@font/ubuntu_light"
+
+            android:text="Use Current Location"
+            android:textColor="@android:color/background_light" />
+
+
+        <RadioButton
+
+            android:id="@+id/id_enterLoc"
+
+            android:layout_width="wrap_content"
+
+            android:layout_height="wrap_content"
+
+            android:layout_weight="1"
+
+            android:fontFamily="@font/ubuntu_light"
+
+            android:text="Enter Address"
+            android:textColor="@android:color/background_light" />
+
+    </RadioGroup>
+
+
+    <EditText
+
+        android:id="@+id/id_editText"
+
+        android:layout_width="wrap_content"
+
+        android:layout_height="wrap_content"
+
+        android:layout_marginEnd="2dp"
+
+        android:layout_marginBottom="20dp"
+
+        android:ems="10"
+
+        android:inputType="textPersonName"
+
+        android:textColor="@android:color/background_light"
+
+        app:layout_constraintBottom_toTopOf="@+id/id_findBathrooms"
+
+        app:layout_constraintEnd_toEndOf="@+id/id_findBathrooms"
+        app:layout_constraintTop_toBottomOf="@+id/id_radioGroup" />
+
+
 
 </android.support.constraint.ConstraintLayout>
