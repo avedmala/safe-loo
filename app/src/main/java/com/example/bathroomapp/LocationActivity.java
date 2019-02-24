@@ -73,7 +73,8 @@ public class LocationActivity extends AppCompatActivity {
 
         lat = getIntent().getDoubleExtra("lat", 0.0);
         lng = getIntent().getDoubleExtra("lng", 0.0);
-        units = getIntent().getStringExtra("unit");
+        //units = getIntent().getStringExtra("unit");
+        units = "mi";
 
         new getLatLng().execute("https://maps.googleapis.com/maps/api/geocode/json?latlng="+lat+","+lng+"&key=AIzaSyCld3yqglDpsfkE3ezJVSPbqj9YSuNZJGE");
 
@@ -102,20 +103,16 @@ public class LocationActivity extends AppCompatActivity {
 
             if(json.getJSONObject(pageNum).getString("directions").equals("")) {
                 directions.setText("No Directions Available");
-                directions.setTextSize(18);
             }
             else {
                 directions.setText(json.getJSONObject(pageNum).getString("directions"));
-                directions.setTextSize(12);
             }
 
-            if(json.getJSONObject(pageNum).getString("comments").equals("")) {
+            if(json.getJSONObject(pageNum).getString("comment").equals("")) {
                 comments.setText("No Comments Available");
-                comments.setTextSize(18);
             }
             else {
-                comments.setText(json.getJSONObject(pageNum).getString("comments"));
-                comments.setTextSize(12);
+                comments.setText(json.getJSONObject(pageNum).getString("comment"));
             }
 
             streetD = json.getJSONObject(pageNum).getString("street").replace(" ", "+");
@@ -149,18 +146,14 @@ public class LocationActivity extends AppCompatActivity {
 
                         if (json.getJSONObject(pageNum).getString("directions").equals("")) {
                             directions.setText("No Directions Available");
-                            directions.setTextSize(18);
                         } else {
                             directions.setText(json.getJSONObject(pageNum).getString("directions"));
-                            directions.setTextSize(12);
                         }
 
-                        if (json.getJSONObject(pageNum).getString("comments").equals("")) {
+                        if (json.getJSONObject(pageNum).getString("comment").equals("")) {
                             comments.setText("No Comments Available");
-                            comments.setTextSize(18);
                         } else {
-                            comments.setText(json.getJSONObject(pageNum).getString("comments"));
-                            comments.setTextSize(12);
+                            comments.setText(json.getJSONObject(pageNum).getString("comment"));
                         }
 
                         streetD = json.getJSONObject(pageNum).getString("street").replace(" ", "+");
@@ -209,20 +202,16 @@ public class LocationActivity extends AppCompatActivity {
 
                     if(json.getJSONObject(pageNum).getString("directions").equals("")) {
                         directions.setText("No Directions Available");
-                        directions.setTextSize(18);
                     }
                     else {
                         directions.setText(json.getJSONObject(pageNum).getString("directions"));
-                        directions.setTextSize(12);
                     }
 
-                    if(json.getJSONObject(pageNum).getString("comments").equals("")) {
+                    if(json.getJSONObject(pageNum).getString("comment").equals("")) {
                         comments.setText("No Comments Available");
-                        comments.setTextSize(18);
                     }
                     else {
-                        comments.setText(json.getJSONObject(pageNum).getString("comments"));
-                        comments.setTextSize(12);
+                        comments.setText(json.getJSONObject(pageNum).getString("comment"));
                     }
 
                     streetD = json.getJSONObject(pageNum).getString("street").replace(" ", "+");
@@ -257,7 +246,6 @@ public class LocationActivity extends AppCompatActivity {
             }
             try {
                 jsonDistance = new JSONObject(a);
-                Log.d("TAG","hi");
                 matrixDistance = jsonDistance.getJSONArray("rows").getJSONObject(0).getJSONArray("elements").getJSONObject(0).getJSONObject("distance").getString("text");
             } catch (JSONException e) {
                 e.printStackTrace();

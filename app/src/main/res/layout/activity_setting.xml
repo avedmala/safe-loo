@@ -66,7 +66,7 @@
         android:layout_marginStart="65dp"
         android:layout_marginTop="24dp"
         android:fontFamily="@font/ubuntu_medium"
-        android:text="Units:"
+        android:text="Units: In Development"
         android:textColor="@android:color/background_light"
         android:textSize="22sp"
         app:layout_constraintStart_toStartOf="parent"

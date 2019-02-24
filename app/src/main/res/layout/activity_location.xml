@@ -106,7 +106,7 @@
 
         android:id="@+id/id_directions"
 
-        android:layout_width="200dp"
+        android:layout_width="240dp"
 
         android:layout_height="51dp"
 
@@ -116,7 +116,10 @@
         android:fontFamily="@font/ubuntu_light"
         android:text="No Directions Available"
         android:textColor="@android:color/background_light"
-        android:textSize="18sp"
+        app:autoSizeMaxTextSize="18sp"
+        app:autoSizeMinTextSize="10sp"
+        app:autoSizeStepGranularity="2sp"
+        app:autoSizeTextType="uniform"
         app:layout_constraintStart_toEndOf="@+id/textView10"
         app:layout_constraintTop_toBottomOf="@+id/id_distance" />
 
@@ -146,16 +149,21 @@
 
         android:id="@+id/id_comments"
 
-        android:layout_width="200dp"
+        android:layout_width="240dp"
 
         android:layout_height="55dp"
 
         android:layout_marginStart="16dp"
         android:layout_marginBottom="50dp"
         android:fontFamily="@font/ubuntu_light"
-        android:text="No comments available"
+        android:text="No Comments available"
+        app:autoSizeMaxTextSize="18sp"
+        app:autoSizeMinTextSize="10sp"
+        app:autoSizeStepGranularity="2sp"
+        app:autoSizeTextType="uniform"
         android:textColor="@android:color/background_light"
         android:textSize="18sp"
+
         app:layout_constraintBottom_toBottomOf="@+id/id_pageNum"
         app:layout_constraintStart_toEndOf="@+id/comment" />
 
