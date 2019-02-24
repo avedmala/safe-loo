@@ -4,6 +4,15 @@ We were brainstorming for an idea and when took a bathroom break. We saw the gen
 ## What it does
 The app finds the nearest bathrooms to your current location or a specified location. The bathrooms can be filtered to only include bathrooms that are accessible to disabled or unisex persons. The icons on the top left and right represent the accessibility or lack of.
 
+![](https://raw.githubusercontent.com/mrswagbhinav/BathroomApp/master/Screenshots/%20Home%20Screen.png)
+![](https://raw.githubusercontent.com/mrswagbhinav/BathroomApp/master/Screenshots/Settings%20Page.png)
+![](https://raw.githubusercontent.com/mrswagbhinav/BathroomApp/master/Screenshots/Current%20Location%20Selected.png)
+![](https://raw.githubusercontent.com/mrswagbhinav/BathroomApp/master/Screenshots/Results%20from%20Current%20Location%20and%20Filters%20Enabled%20-%201.png)
+![](https://raw.githubusercontent.com/mrswagbhinav/BathroomApp/master/Screenshots/Results%20from%20Current%20Location%20and%20Filters%20Enabled%20-%202.png)
+![](https://raw.githubusercontent.com/mrswagbhinav/BathroomApp/master/Screenshots/%20Manual%20Location%20Selected.png)
+![](https://raw.githubusercontent.com/mrswagbhinav/BathroomApp/master/Screenshots/%20Results%20from%20Manual%20Location%20and%20Filters%20Enabled%20-%201.png)
+![](https://raw.githubusercontent.com/mrswagbhinav/BathroomApp/master/Screenshots/%20Results%20from%20Manual%20Location%20and%20Filters%20Enabled%20-%202.png)
+
 ## How we built it
 We used Android-Studio in Java to build our app. The bathroom data is pulled from the Refuge Restrooms API. We converted the manually inputted location into longitude and latitude using the Geocoding API from GCP. The current location is from the phone's GPS.
 
