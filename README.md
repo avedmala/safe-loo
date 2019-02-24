@@ -4,7 +4,7 @@ We were brainstorming for an idea and when took a bathroom break. We saw the gen
 ## What it does
 The app finds the nearest bathrooms to your current location or a specified location. The bathrooms can be filtered to only include bathrooms that are accessible to disabled or unisex persons. The icons on the top left and right represent the accessibility or lack of.
 
-<img src="/Screenshots/%20Home%20Screen.png" width="300" >
+<img src="/Screenshots/Home%20Screen.png" width="300" >
 <img src="/Screenshots/Settings%20Page.png" width="300" >
 <img src="/Screenshots/Current%20Location%20Selected.png" width="300">
 <img src="/Screenshots/Results%20from%20Current%20Location%20and%20Filters%20Enabled%20-%201.png" width="300">
