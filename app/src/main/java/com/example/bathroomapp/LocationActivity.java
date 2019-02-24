@@ -128,17 +128,12 @@ public class LocationActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent mapIntent = new Intent(Intent.ACTION_VIEW);
+                mapIntent.setPackage("com.google.android.apps.maps");
                 try {
-                    mapIntent.setData(Uri.parse("geo:"+json.getJSONObject(pageNum).getString("latitude")+","+json.getJSONObject(pageNum).getString("longitude")));
+                    mapIntent.setData(Uri.parse("geo:"+json.getJSONObject(pageNum).getString("latitude")+","+json.getJSONObject(pageNum).getString("longitude")+"?q="+json.getJSONObject(pageNum).getString("name")+" "+json.getJSONObject(pageNum).getString("street")));
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
-//                try {
-//                    Log.d("TAG","http://maps.google.com/maps?saddr="+lat+","+lng+"&daddr="+json.getJSONObject(pageNum).getString("latitude")+","+json.getJSONObject(pageNum).getString("longitude"));
-//                    mapIntent.setData(Uri.parse("http://maps.google.com/maps?saddr="+lat+","+lng+"&daddr="+json.getJSONObject(pageNum).getString("latitude")+","+json.getJSONObject(pageNum).getString("longitude")));
-//                } catch (JSONException e) {
-//                    e.printStackTrace();
-//                }
                 startActivity(mapIntent);
             }
         });
