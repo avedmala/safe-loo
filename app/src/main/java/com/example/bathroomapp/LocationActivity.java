@@ -101,14 +101,14 @@ public class LocationActivity extends AppCompatActivity {
             else
                 accessible.setVisibility(View.INVISIBLE);
 
-            if(json.getJSONObject(pageNum).getString("directions").equals("")) {
+            if(json.getJSONObject(pageNum).getString("directions").equals("") || json.getJSONObject(pageNum).getString("directions").equals("null")) {
                 directions.setText("No Directions Available");
             }
             else {
                 directions.setText(json.getJSONObject(pageNum).getString("directions"));
             }
 
-            if(json.getJSONObject(pageNum).getString("comment").equals("")) {
+            if(json.getJSONObject(pageNum).getString("comment").equals("") || json.getJSONObject(pageNum).getString("comment").equals("null")) {
                 comments.setText("No Comments Available");
             }
             else {
@@ -144,13 +144,13 @@ public class LocationActivity extends AppCompatActivity {
                         else
                             accessible.setVisibility(View.INVISIBLE);
 
-                        if (json.getJSONObject(pageNum).getString("directions").equals("")) {
+                        if(json.getJSONObject(pageNum).getString("directions").equals("") || json.getJSONObject(pageNum).getString("directions").equals("null")) {
                             directions.setText("No Directions Available");
                         } else {
                             directions.setText(json.getJSONObject(pageNum).getString("directions"));
                         }
 
-                        if (json.getJSONObject(pageNum).getString("comment").equals("")) {
+                        if(json.getJSONObject(pageNum).getString("comment").equals("") || json.getJSONObject(pageNum).getString("comment").equals("null")) {
                             comments.setText("No Comments Available");
                         } else {
                             comments.setText(json.getJSONObject(pageNum).getString("comment"));
@@ -200,14 +200,14 @@ public class LocationActivity extends AppCompatActivity {
                     else
                         accessible.setVisibility(View.INVISIBLE);
 
-                    if(json.getJSONObject(pageNum).getString("directions").equals("")) {
+                    if(json.getJSONObject(pageNum).getString("directions").equals("") || json.getJSONObject(pageNum).getString("directions").equals("null")) {
                         directions.setText("No Directions Available");
                     }
                     else {
                         directions.setText(json.getJSONObject(pageNum).getString("directions"));
                     }
 
-                    if(json.getJSONObject(pageNum).getString("comment").equals("")) {
+                    if(json.getJSONObject(pageNum).getString("comment").equals("") || json.getJSONObject(pageNum).getString("comment").equals("null")) {
                         comments.setText("No Comments Available");
                     }
                     else {
