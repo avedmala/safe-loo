@@ -29,6 +29,9 @@ public class SettingActivity extends AppCompatActivity {
         mile = findViewById(R.id.id_mile);
         km = findViewById(R.id.id_km);
 
+        mile.setVisibility(View.INVISIBLE);
+        km.setVisibility(View.INVISIBLE);
+
         settings = getIntent().getIntExtra("settings", 3);
         Log.d("TAG", ""+settings);
 
