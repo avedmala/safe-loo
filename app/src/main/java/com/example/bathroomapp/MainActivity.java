@@ -70,6 +70,7 @@ public class MainActivity extends AppCompatActivity implements LocationListener{
         setting = findViewById(R.id.id_settings);
 
         editText.setVisibility(View.INVISIBLE);
+        findBathroom.setVisibility(View.INVISIBLE);
 
         intent = new Intent(this, LocationActivity.class);
         intentSetting = new Intent(this, SettingActivity.class);
@@ -87,6 +88,7 @@ public class MainActivity extends AppCompatActivity implements LocationListener{
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if(isChecked){
                     editText.setVisibility(View.INVISIBLE);
+                    findBathroom.setVisibility(View.VISIBLE);
                 }
             }
         });
@@ -94,8 +96,10 @@ public class MainActivity extends AppCompatActivity implements LocationListener{
         manualLoc.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if(isChecked)
+                if(isChecked) {
                     editText.setVisibility(View.VISIBLE);
+                    findBathroom.setVisibility(View.VISIBLE);
+                }
             }
         });
 
