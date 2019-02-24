@@ -2,7 +2,7 @@
 We were brainstorming for an idea and when took a bathroom break. We saw the gender neutral bathroom in the building and decided to make an app that would find nearby gender neutral bathrooms. There's more functionality to the app but that's the essence of it.
 
 ## What it does
-The app finds the nearest bathrooms to your current location or a specified location. The bathrooms can be filtered to only include bathrooms that are accessible to disabled or unisex persons.
+The app finds the nearest bathrooms to your current location or a specified location. The bathrooms can be filtered to only include bathrooms that are accessible to disabled or unisex persons. The icons on the top left and right represent the accessibility or lack of.
 
 ## How we built it
 We used Android-Studio in Java to build our app. The bathroom data is pulled from the Refuge Restrooms API. We converted the manually inputted location into longitude and latitude using the Geocoding API from GCP. The current location is from the phone's GPS.
