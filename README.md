@@ -4,22 +4,14 @@ We were brainstorming for an idea and when took a bathroom break. We saw the gen
 ## What it does
 The app finds the nearest bathrooms to your current location or a specified location. The bathrooms can be filtered to only include bathrooms that are accessible to disabled or unisex persons. The icons on the top left and right represent the accessibility or lack of.
 
-![](/Screenshots/%20Home%20Screen.png)
-❮img src="/Screenshots/%20Home%20Screen.png" width="30" height="30"❯
-![](Screenshots/Settings%20Page.png)
-❮img src="/Screenshots/Settings%20Page.png" width="30" height="30"❯
-![](/Screenshots/Current%20Location%20Selected.png)
-❮img src="/Screenshots/Current%20Location%20Selected.png" width="30" height="30"❯
-![](/Screenshots/Results%20from%20Current%20Location%20and%20Filters%20Enabled%20-%201.png)
-❮img src="/Screenshots/Results%20from%20Current%20Location%20and%20Filters%20Enabled%20-%201.png" width="30" height="30"❯
-![](/Screenshots/Results%20from%20Current%20Location%20and%20Filters%20Enabled%20-%202.png)
-❮img src="/Screenshots/Results%20from%20Current%20Location%20and%20Filters%20Enabled%20-%202.png" width="30" height="30"❯
-![](/Screenshots/%20Manual%20Location%20Selected.png)
-❮img src="/Screenshots/%20Manual%20Location%20Selected.png" width="30" height="30"❯
-![](/Screenshots/%20Results%20from%20Manual%20Location%20and%20Filters%20Enabled%20-%201.png)
-❮img src="/Screenshots/%20Results%20from%20Manual%20Location%20and%20Filters%20Enabled%20-%201.png" width="30" height="30"❯
-![](/Screenshots/%20Results%20from%20Manual%20Location%20and%20Filters%20Enabled%20-%202.png)
-❮img src="/Screenshots/%20Results%20from%20Manual%20Location%20and%20Filters%20Enabled%20-%202.png" width="30" height="30"❯
+<img src="/Screenshots/%20Home%20Screen.png" width="300" >
+<img src="/Screenshots/Settings%20Page.png" width="300" >
+<img src="/Screenshots/Current%20Location%20Selected.png" width="300">
+<img src="/Screenshots/Results%20from%20Current%20Location%20and%20Filters%20Enabled%20-%201.png" width="300">
+<img src="/Screenshots/Results%20from%20Current%20Location%20and%20Filters%20Enabled%20-%202.png" width="300">
+<img src="/Screenshots/%20Manual%20Location%20Selected.png" width="300">
+<img src="/Screenshots/%20Results%20from%20Manual%20Location%20and%20Filters%20Enabled%20-%201.png" width="300">
+<img src="/Screenshots/%20Results%20from%20Manual%20Location%20and%20Filters%20Enabled%20-%202.png" width="300">
 
 ## How we built it
 We used Android-Studio in Java to build our app. The bathroom data is pulled from the Refuge Restrooms API. We converted the manually inputted location into longitude and latitude using the Geocoding API from GCP. The current location is from the phone's GPS.
