@@ -1,5 +1,7 @@
 package com.example.bathroomapp;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -18,6 +20,7 @@ import java.io.InputStreamReader;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
+import java.util.Locale;
 
 public class LocationActivity extends AppCompatActivity {
 
@@ -120,6 +123,25 @@ public class LocationActivity extends AppCompatActivity {
         } catch (JSONException e) {
             e.printStackTrace();
         }
+
+        name.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent mapIntent = new Intent(Intent.ACTION_VIEW);
+                try {
+                    mapIntent.setData(Uri.parse("geo:"+json.getJSONObject(pageNum).getString("latitude")+","+json.getJSONObject(pageNum).getString("longitude")));
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+//                try {
+//                    Log.d("TAG","http://maps.google.com/maps?saddr="+lat+","+lng+"&daddr="+json.getJSONObject(pageNum).getString("latitude")+","+json.getJSONObject(pageNum).getString("longitude"));
+//                    mapIntent.setData(Uri.parse("http://maps.google.com/maps?saddr="+lat+","+lng+"&daddr="+json.getJSONObject(pageNum).getString("latitude")+","+json.getJSONObject(pageNum).getString("longitude")));
+//                } catch (JSONException e) {
+//                    e.printStackTrace();
+//                }
+                startActivity(mapIntent);
+            }
+        });
 
         forward.setOnClickListener(new View.OnClickListener() {
             @Override
