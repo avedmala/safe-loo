@@ -1,5 +1,5 @@
 ## Inspiration
-We were brainstorming for an idea and when took a bathroom break. We saw the gender neutral bathroom in the building and decided to make an app that would find nearby gender neutral bathrooms. There's more functionality to the app but that's the essence of it.
+We were brainstorming for an idea and when we took a bathroom break, we saw the gender neutral bathroom in the building and decided to make an app that would find nearby gender neutral bathrooms. There's more functionality to the app but that's the essence of it.
 
 ## What it does
 The app finds the nearest bathrooms to your current location or a specified location. The bathrooms can be filtered to only include bathrooms that are accessible to disabled or unisex persons. The icons on the top left and right represent the accessibility or lack of.
