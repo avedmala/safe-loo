@@ -79,7 +79,7 @@ public class LocationActivity extends AppCompatActivity {
         //units = getIntent().getStringExtra("unit");
         units = "mi";
 
-        new getLatLng().execute("https://maps.googleapis.com/maps/api/geocode/json?latlng="+lat+","+lng+"&key=AIzaSyCld3yqglDpsfkE3ezJVSPbqj9YSuNZJGE");
+        //new getLatLng().execute("https://maps.googleapis.com/maps/api/geocode/json?latlng="+lat+","+lng+"&key=AIzaSyCld3yqglDpsfkE3ezJVSPbqj9YSuNZJGE");
 
         try {
             json = new JSONArray(getIntent().getStringExtra("JSON"));

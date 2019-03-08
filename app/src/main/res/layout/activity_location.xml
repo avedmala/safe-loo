@@ -14,7 +14,7 @@
 
     android:fitsSystemWindows="true"
 
-    tools:context=".Main2Activity">
+    tools:context=".LocationActivity">
 
 
     <TextView
